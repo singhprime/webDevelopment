@@ -1,0 +1,251 @@
+<html>
+<head>
+<title>Ticket Booking Page</title>
+</head>
+<style>
+body{
+ background-color:#9ACD32;
+ background-image:url(http://i3.wallpaperscraft.com/image/olympic_games_2016_rio_2016_110831_3840x2160.jpg);
+ background-size:1350px 1980px;
+ background-repeat:no-repeat;
+ background-position:center;
+ }
+ h1{
+ float:left;
+ margin:30px 0px 0px 10px;
+}
+ #field1{
+  border:3px solid gold;
+  }
+ #field2{
+ border:3px solid gold;
+ }
+ legend{
+  font-family: "Cursive";
+  border:2px solid Chartreuse;
+  color:Black;
+  font-size:100%;
+ }
+ div{
+  font-family:"Serif"; 
+  font-size:20; 
+  color:Black;
+ }
+ label
+ {
+ font-size:22px; border-bottom:1px solid;
+ color:Yellow;
+ }
+ #upper 
+ {
+ width:1300px;
+ height:120px;
+ background-image:url(https://www.rio2016.com/tickets/findoutmore/assets/img/header-en.png);
+ border-left:5px solid #A09885;
+ border-right:5px solid #A09885;
+ overflow:auto;
+ margin:0 auto; 
+ padding:10px;
+ }
+ #header{
+ width:100%;
+ height:100px;
+ }
+ #social{
+ float:right;
+ margin:30px 0px 0px 10px;
+ }
+ #social ul li
+ {
+ float:left;
+ list-style:none;
+ padding-right:5px;
+ }
+ #social img{
+ height:36px;
+ width:40px;
+ }
+</style>
+<center>
+<body>
+   <div id="data"></div>
+    <script language="JavaScript">
+    function show() 
+	{
+	    var parameters=location.search.substring(1).split("&");
+		var temp=parameters[0].split("=");
+		l=unescape(temp[1]);
+        document.getElementById("data").innerHTML = "Hello "+l;
+    }
+	show();
+    </script> 
+
+
+ <div id="upper">
+  <div id="header">
+   <h1></h1>
+   <div id="social">
+    <ul>
+	 <li style="color:black;">Share</li>
+	 <li><a href="http://www.facebook.com" target="_blank"><img src="C:\Users\sai kiran\Pictures\facebook-small.png" title="facebook"/></a></li>
+	 <li><a href="http://www.lpu.in" target="_blank"><img src="C:\Users\sai kiran\Pictures\Lovely_Professional_University_Seal.jpg" title="LPU"/></a></li>
+	</ul>
+	</div>
+  </div>	
+ </div>
+<div id="box_form">
+
+<form name="myform" action="payment3.html" method="get" id="ticketform">
+<pre>
+<fieldset id="field1">
+<legend>Contact Details</legend>
+<div>FIRST NAME
+<input type="text" id="1" name="fname" maxlength="15" required></div>
+<div>LAST NAME
+<input type="text" id="2" name="lname" maxlength="15" required></div>
+<div>E-MAIL ID
+<input type="email" id="3" name="email" maxlength="30" required></div>
+<div>MOBILE NUMBER
+<input type="text" name="4" maxlength="10"></div>
+<div>GENDER
+ <input type="radio" name="5">MALE
+ <input type="radio" name="6">FEMALE
+ <input type="radio" name="7">OTHERS
+ </div>
+ <div>ADDRESS
+<input type="text" name="8" maxlength="30" required></div>
+<div>PINCODE
+<input type="text" name="9" maxlength="6" required></div>
+<div>CITY
+<input type="text" name="10" maxlength="10" required></div>
+<div>STATE
+<input type="text" name="11" maxlength="10" required></div>
+<div>COUNTRY
+<input type="text" name="12" maxlength="10" required></div>
+</fieldset>
+  
+ <marquee onmouseover="this.stop()" onmouseout="this.start()">
+  <img src="https://assetrio2016.azureedge.net/contentpage/6y2GEHoP.jpg" height="220px" width="300px" border="2"> 
+  <img src="http://media.breitbart.com/media/2015/02/Rio-2016-Olympics-Mascots-640x480.jpg" height="220px" width="300px" border="2">
+  <img src="http://null48.com/wp-content/uploads/2016/09/Rio-2016-Olympic-Game-Android-Free-Download4.jpg" height="220px" width="300px" border="2">
+  <img src="http://sports24hour.com/wp-content/uploads/2016/07/rio-olympics-2016-stadium-for-all-sports-event.jpg" height="220px" width="300px" border="2">
+ </marquee> 
+ <fieldset id="field2";">
+ <legend>Choose Your Ticket</legend>
+ <label>Competition Zones</label>
+ 
+ <input type="radio" name="selectedticket" value="Barra"
+ onclick="calculateTotal()" />Zone Barra($50)
+ <input type="radio" name="selectedticket" value="Copacabana"
+ onclick="calculateTotal()" />Zone Copacabana($100)
+ <input type="radio" name="selectedticket" value="Deodoro"
+ onclick="calculateTotal()" />Zone Deodoro($150)
+ <input type="radio" name="selectedticket" value="Maracana"
+ onclick="calculateTotal()" />Zone Maracana($200)
+ <input type="radio" name="selectedticket" value="Football"
+ onclick="calculateTotal()" />Football Cities($400)
+ 
+ <label>Sports</label>
+ 
+ <select id="sports" name='sports' onchange="calculateTotal()">
+ <option value="None">Select Sports</option>
+ <option value="Opening Ceremony">Opening Ceremony($100)</option>
+ <option value="Archery">Archery($46)</option>
+ <option value="Athletics">Athletics($75)</option>
+ <option value="Badminton">Badminton($36)</option>
+ <option value="Basketball">Basketball($54)</option>
+ <option value="Boxing">Boxing($61)</option>
+ <option value="Canoe">Canoe($22)</option>
+ <option value="Cycling">Cycling($41)</option>
+ <option value="Diving">Diving($51)</option>
+ <option value="Fencing">Fencing($21)</option>
+ <option value="Football">Football($94)</option>
+ <option value="Golf">Golf($96)</option>
+ <option value="Gymnastics">Gymnastics($55)</option>
+ <option value="Handball">Handball($26)</option>
+ <option value="Hockey">Hockey($84)</option>
+ <option value="Judo">Judo($36)</option>
+ <option value="Rowing">Rowing($47)</option>
+ <option value="Rugby">Rugby($90)</option>
+ <option value="Shooting">Shooting($42)</option>
+ <option value="Swimming">Swimming($66)</option>
+ <option value="Table Tennis">Table Tennis($53)</option>
+ <option value="Tennis">Tennis($86)</option>
+ <option value="Volleyball">Volleyball($37)</option>
+ <option value="Weightlifting">Weightlifting($39)</option>
+ <option value="Wrestling">Wrestling($44)</option>
+ </select>
+ <br>
+ <div id="totalPrice"></div>
+ </fieldset>
+ <input type="button" value="Submit" onclick="window.open('sar payment3.html')"> <input type="reset" value="Reset">
+</form>
+ </div>
+ <script>
+ var ticket_prices = new Array();
+ ticket_prices["Barra"]=50;
+ ticket_prices["Copacabana"]=100;
+ ticket_prices["Deodoro"]=150;
+ ticket_prices["Maracana"]=200;
+ ticket_prices["Football"]=400;
+ 
+var sports_prices=new Array();
+sports_prices["None"]=0;
+sports_prices["Opening Ceremony"]=100;
+sports_prices["Archery"]=46;
+sports_prices["Athletics"]=75;
+sports_prices["Badminton"]=36;
+sports_prices["Basketball"]=54;
+sports_prices["Boxing"]=61;
+sports_prices["Canoe"]=22;
+sports_prices["Cycling"]=41;
+sports_prices["Diving"]=51;
+sports_prices["Fencing"]=21;
+sports_prices["Football"]=94;
+sports_prices["Golf"]=96;
+sports_prices["Gymnastics"]=55;
+sports_prices["Handball"]=26;
+sports_prices["Hockey"]=84;
+sports_prices["Judo"]=36;
+sports_prices["Rowing"]=47;
+sports_prices["Rugby"]=90;
+sports_prices["Shooting"]=42;
+sports_prices["Swimming"]=66;
+sports_prices["Table Tennis"]=53;
+sports_prices["Tennis"]=86;
+sports_prices["Volleyball"]=37;
+sports_prices["Weightlifting"]=39;
+sports_prices["Wrestling"]=44;
+
+ function getTicketPrice()
+ {
+  var ticketPrice=0;
+  var theForm=document.forms["ticketform"];
+  var selectedticket=theForm.elements["selectedticket"];
+  for(var i=0;i<selectedticket.length;i++)
+  {
+   if(selectedticket[i].checked)
+   {
+    ticketPrice=ticket_prices[selectedticket[i].value];
+    break;
+   }
+  }
+  return ticketPrice;
+ }
+  function getSportsPrice()
+  {
+   var ticket_sports_price=0;
+   var theForm = document.forms["ticketform"];
+   var selectedSports=theForm.elements["sports"];
+   ticket_sports_price=sports_prices[selectedSports.value];
+   return ticket_sports_price;
+  }
+  function calculateTotal()
+  {
+  var total=getTicketPrice() + getSportsPrice();
+  document.getElementById('totalPrice').innerHTML="Total Price Of Your Ticket Is  $"+total;
+  }
+ </script>
+
+</body>
+</html>

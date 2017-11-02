@@ -1,0 +1,71 @@
+<html>
+<head><title>Login Page</title>
+<style>
+h1{
+   color:Red;
+   font-family:cursive; 
+   font-size:50px;
+}
+body{
+   text-align:center;
+   color:white;
+   background-image:url(http://windows10free.org/wp-content/uploads/2016/07/Rio-2016-olympics-logo-hd-wallpaper.jpg);
+   background-size:cover;
+   padding:5px;
+   font-family:Candara;
+   font-size:18px;
+   }
+form{
+  text-align:center;
+  margin-top:40px;
+  color:black;
+} 
+</style>
+<head>
+<script language="javascript">
+
+var users=new Array();
+var passes=new Array();
+
+function init()
+{
+users.push("user1@gmail.com");
+passes.push("pass1");
+users.push("user2@yahoo.com");
+passes.push("pass2");
+users.push("user3@outlook.com");
+passes.push("pass3");
+users.push("user4@gmail.com");
+passes.push("pass4");
+}
+function login()
+{
+for(var i=0;i<users.length;i++)
+ {
+ if(document.getElementById("user").value == users[i])
+  {
+  if(document.getElementById("pass").value == passes[i])
+   {
+    document.getElementById("result").innerHTML="You have logged into "+users[i];
+   }
+  }
+ }
+}
+</script>
+
+<body onLoad="init();"> 
+
+   <h1>Login Page</h1><br>
+   
+<form action="sar tic_form.html" method="GET">
+<pre>
+
+     Username: <input type="email" id="user" name="serialNumber" required/><br>
+     Password: <input type="password" id="pass" required/><br/>
+          <a href="sar tic_form.html"><input type="submit" value="Submit" onclick="window.open('sar payment3.html')" /></a>   <input type="button" value="Reset"/>
+<br><br><br><br>
+<marquee onmouseover="this.stop()" onmouseout="this.start()"><font color="#FF4500;"><p><b>Welcome to our login page.Your email-id is your username,so please provide the same.</b></p></font></marquee>
+</pre> 
+</form>
+</body>
+</html> 
